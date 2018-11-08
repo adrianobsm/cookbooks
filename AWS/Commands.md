@@ -1,0 +1,5 @@
+# Commands
+
+```sh
+aws configure
+```

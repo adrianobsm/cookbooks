@@ -1,0 +1,36 @@
+server {
+	listen 80;
+
+	root /var/www/codexplain.com.br/aneel;
+	index index.html index.htm;
+
+	server_name aneel.codexplain.com.br;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+
+	location = /favicon.ico {
+		access_log off;
+		log_not_found off;
+	}
+
+	location = /robots.txt {
+		access_log off;
+		log_not_found off;
+	}
+
+	error_page 404 /404.html;
+	error_page 500 502 503 504 /50x.html;
+
+	location = /50x.html {
+		root /usr/share/nginx/html;
+	}
+
+	access_log off;
+	error_log /var/log/nginx/aneel.codexplain.com.br-error.log error;
+
+	location ~ /\.ht {
+		deny all;
+	}
+}

@@ -1,0 +1,7 @@
+# General
+
+## Or
+
+```
+(TEXT|ANOTHERTEXT).*$
+```
